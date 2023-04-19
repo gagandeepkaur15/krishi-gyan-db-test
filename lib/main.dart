@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Payment App',
-          initialRoute: '/signin',
+          initialRoute: '/',
           routes: {
             '/': ((context) => const AuthToggle()),
             '/profile': ((context) => const Profile()),
