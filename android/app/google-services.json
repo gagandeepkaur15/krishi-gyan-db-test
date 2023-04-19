@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "883523029808",
+    "project_id": "otp-login-d1d4a",
+    "storage_bucket": "otp-login-d1d4a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:883523029808:android:4540d6391fc92c5bbf56f5",
+        "android_client_info": {
+          "package_name": "com.example.krishi_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "883523029808-uqm6lmhu3l5mpvrtdg8chqkr0hkskt4j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXh1YKQfVrbPxVRWfem7BuJ2ZOQUvb138"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "883523029808-uqm6lmhu3l5mpvrtdg8chqkr0hkskt4j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "883523029808-j9lue30cvfcqamdfui98ag3gvu3hno10.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.krishiTest"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
