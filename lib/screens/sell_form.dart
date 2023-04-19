@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 class SellForm extends StatefulWidget {
   const SellForm({super.key});
@@ -24,6 +25,22 @@ class _SellFormState extends State<SellForm> {
         file = File(result.files.single.path!);
       });
     } else {}
+  }
+
+  Future<String?> uploadFileToFirebase(File? file) async {
+    if (file == null) return null;
+
+    final FirebaseStorage storage = FirebaseStorage.instance;
+
+    final Reference ref =
+        storage.ref().child('files/${file.path.split('/').last}');
+
+    final UploadTask uploadTask = ref.putFile(file);
+    final TaskSnapshot taskSnapshot = await uploadTask.whenComplete(() {});
+
+    final String downloadUrl = await taskSnapshot.ref.getDownloadURL();
+
+    return downloadUrl;
   }
 
   @override
@@ -68,7 +85,8 @@ class _SellFormState extends State<SellForm> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          pickFile();
+          await pickFile();
+          final String? fileUrl = await uploadFileToFirebase(file);
         },
         child: const Icon(Icons.add_a_photo),
       ),
